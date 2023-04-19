@@ -64,9 +64,8 @@ export async function getServerSideProps(context: any) {
   const { params } = context
   const { id } = params
 
-  const res = await fetch(` http://localhost:1337/api/projects/${id}`)
+  const res = await fetch(`${process.env.API_HOST}/projects/${id}`)
   const project = await res.json()
-  console.log(project)
 
 
   return {
