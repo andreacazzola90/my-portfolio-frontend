@@ -3,10 +3,14 @@ import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Projets({ id }) {
+interface Data {
+  id: [string];
+}
+
+export default function Projets(data: Data) {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {JSON.stringify(id)}AAA
+      {JSON.stringify(data.id)}AAA
       <section>
         <div className="mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -52,7 +56,10 @@ export default function Projets({ id }) {
   )
 }
 
-export async function getServerSideProps({ params }) {
+interface Params {
+  id: string
+}
+export async function getServerSideProps(params: Params) {
 
   const { id } = params
 
@@ -60,7 +67,9 @@ export async function getServerSideProps({ params }) {
 
   return {
     props: {
-      id: id
+      data: {
+        id: id,
+      }
     }
   };
 }
