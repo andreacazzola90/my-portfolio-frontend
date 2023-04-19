@@ -4,13 +4,16 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 interface Data {
-  id: [string];
+  id: string,
+  project: any
 }
 
-export default function Projets(data: Data) {
+export default function Projets({ id, project }: Data) {
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {JSON.stringify(data.id)}AAA
+      AAA {id} {JSON.stringify(project)}
+      {project.name}
       <section>
         <div className="mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -56,20 +59,20 @@ export default function Projets(data: Data) {
   )
 }
 
-interface Params {
-  id: string
-}
-export async function getServerSideProps(params: Params) {
 
+export async function getServerSideProps(context: any) {
+  const { params } = context
   const { id } = params
 
-  //Grab your page
+  const res = await fetch(` http://localhost:1337/api/projects/${id}`)
+  const project = await res.json()
+  console.log(project)
+
 
   return {
     props: {
-      data: {
-        id: id,
-      }
+      id,
+      project: project.data.attributes
     }
   };
 }
