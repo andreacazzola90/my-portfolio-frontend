@@ -3,9 +3,34 @@ import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+interface Project {
+  id: string
+  name: string
+  description: string
+  attributes: {
+    name: string
+    description: string
+    gallery: any
+
+  }
+}
+interface Projects {
+  projects: any
+}
+export default function Home({ projects }: Projects) {
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      {console.log(JSON.stringify(projects))}
+      {projects.map((project: any, i: number) => (
+        <div key={i} className='project-preview'>
+          {project.attributes.name}
+          {project.attributes.description}
+          {console.log(JSON.stringify(project))}
+          {project.id}
+        </div>
+      ))}
+
       <section>
         <div className="mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -49,4 +74,16 @@ export default function Home() {
 
     </main>
   )
+}
+
+export async function getServerSideProps() {
+
+  const res = await fetch(`${process.env.API_HOST}/projects`)
+  const projects = await res.json()
+
+  return {
+    props: {
+      projects: projects.data
+    }
+  };
 }
