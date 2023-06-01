@@ -17,8 +17,8 @@ export default function Projets({ id, project }: Data) {
 
       {project.name}
       {project.description}
-      {project.gallery.data.map((img: any) =>
-        <div>
+      {project.gallery.data.map((img: any, i: number) =>
+        <div key={i}>
           <img src={img.attributes.url}></img>
         </div>
       )}
