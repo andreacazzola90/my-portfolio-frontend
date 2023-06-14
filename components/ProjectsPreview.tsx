@@ -13,7 +13,7 @@ const ProjectPreview = (props: any) => {
 
                                 {project.attributes.gallery.data.map((img: any, i: number) => {
                                     return <figure key={i}>
-                                        <Image src={img.attributes.url} alt={''} />
+                                        <Image src={img.attributes.url} alt={''} width={500} height={500} />
                                     </figure>;
                                 }
                                 )}

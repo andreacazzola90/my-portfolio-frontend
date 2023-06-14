@@ -43,7 +43,7 @@ export default function Projets({ id, project }: Data) {
               </div>
               {project.gallery.data.map((img: any, i: number) =>
                 <div key={i}>
-                  <Image src={img.attributes.url} alt={''}></Image>
+                  <Image src={img.attributes.url} alt={''} width={500} height={500} ></Image>
                 </div>
               )}
             </div>
@@ -84,10 +84,10 @@ export default function Projets({ id, project }: Data) {
           modules={[Pagination]}
           className="mySwiper max-w-full"
         >
-          <SwiperSlide><Image src="https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg" className="rounded-box max-w-md" alt={''} /></SwiperSlide>
-          <SwiperSlide><Image src="https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg" className="rounded-box max-w-md" alt={''} /></SwiperSlide>
-          <SwiperSlide><Image src="https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg" className="rounded-box max-w-md" alt={''} /></SwiperSlide>
-          <SwiperSlide><Image src="https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg" className="rounded-box max-w-md" alt={''} /></SwiperSlide>
+          <SwiperSlide><Image src="https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg" className="rounded-box max-w-md" alt={''} width={500} height={500} /></SwiperSlide>
+          <SwiperSlide><Image src="https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg" className="rounded-box max-w-md" alt={''} width={500} height={500} /></SwiperSlide>
+          <SwiperSlide><Image src="https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg" className="rounded-box max-w-md" alt={''} width={500} height={500} /></SwiperSlide>
+          <SwiperSlide><Image src="https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg" className="rounded-box max-w-md" alt={''} width={500} height={500} /></SwiperSlide>
         </Swiper>
 
 
