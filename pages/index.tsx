@@ -1,9 +1,8 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import ProjectPreview from '@/components/ProjectsPreview';
-import Projets from './projects/[id]';
 
-const inter = Inter({ subsets: ['latin'] })
+import ProjectPreview from '@/components/ProjectsPreview';
+
+
+
 
 
 
