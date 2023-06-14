@@ -43,14 +43,14 @@ export default function Projets({ id, project }: Data) {
               </div>
               {project.gallery.data.map((img: any, i: number) =>
                 <div key={i}>
-                  <img src={img.attributes.url}></img>
+                  <Image src={img.attributes.url} alt={''}></Image>
                 </div>
               )}
             </div>
           </div>
           <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
             <div className="flex flex-col items-center justify-between w-full mb-10 lg:flex-row">
-              <img
+              <Image
                 alt="logo"
                 width={450}
                 height={450}
@@ -84,10 +84,10 @@ export default function Projets({ id, project }: Data) {
           modules={[Pagination]}
           className="mySwiper max-w-full"
         >
-          <SwiperSlide><img src="https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg" className="rounded-box max-w-md" /></SwiperSlide>
-          <SwiperSlide><img src="https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg" className="rounded-box max-w-md" /></SwiperSlide>
-          <SwiperSlide><img src="https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg" className="rounded-box max-w-md" /></SwiperSlide>
-          <SwiperSlide><img src="https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg" className="rounded-box max-w-md" /></SwiperSlide>
+          <SwiperSlide><Image src="https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg" className="rounded-box max-w-md" alt={''} /></SwiperSlide>
+          <SwiperSlide><Image src="https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg" className="rounded-box max-w-md" alt={''} /></SwiperSlide>
+          <SwiperSlide><Image src="https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg" className="rounded-box max-w-md" alt={''} /></SwiperSlide>
+          <SwiperSlide><Image src="https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg" className="rounded-box max-w-md" alt={''} /></SwiperSlide>
         </Swiper>
 
 

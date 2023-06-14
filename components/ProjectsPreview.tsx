@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from 'next/image'
 const ProjectPreview = (props: any) => {
 
     return (
@@ -10,10 +11,11 @@ const ProjectPreview = (props: any) => {
                         <>
                             <div className="card card-compact w-96 bg-base-100 shadow-xl">
 
-                                {project.attributes.gallery.data.map((img: any, i: number) =>
-                                    <figure key={i}>
-                                        <img src={img.attributes.url}></img>
-                                    </figure>
+                                {project.attributes.gallery.data.map((img: any, i: number) => {
+                                    return <figure key={i}>
+                                        <Image src={img.attributes.url} alt={''} />
+                                    </figure>;
+                                }
                                 )}
 
                                 <div className="card-body">
